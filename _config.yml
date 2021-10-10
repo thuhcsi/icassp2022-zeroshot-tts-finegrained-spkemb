@@ -1,0 +1,6 @@
+remote_theme: thuhcsi/slate
+title: Syntactic Representation Learning for Neural Network based TTS with Syntactic Parse Tree Traversal
+description: Accepted by ICASSP 2021.
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-slate
