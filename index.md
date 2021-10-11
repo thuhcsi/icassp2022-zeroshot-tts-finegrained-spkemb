@@ -62,11 +62,11 @@ Content: 仅在与之利益密切相关的特定事项上享有表决权。（ji
 
 | Target Chinese Text（Phoneme Sequence） | CDFSE | Reference Alignment |
 | :---- | :---- | :---- |
-| 你好。（ni2 hao3 .） | <audio controls><source src="./wavs/cdfse/L0.wav" type="audio/wav">Your browser does not support the audio element.</audio> | ![L0](./wavs/casestudy/refalign_L0.jpg) |
-| 仅在表决权，仅在表决权。（jin3 zai4 biao3 jue2 quan2 , jin3 zai4 biao3 jue2 quan2 .） | <audio controls><source src="./wavs/casestudy/L1.wav" type="audio/wav">Your browser does not support the audio element.</audio> | ![L1](./wavs/casestudy/refalign_L1.jpg) |
-| 仅在与之利益密切相关的特定事项上享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .） | <audio controls><source src="./wavs/casestudy/L2.wav" type="audio/wav">Your browser does not support the audio element.</audio> | ![L2](./wavs/casestudy/refalign_L2.jpg) |
-| 仅在与之利益密切相关的特定事项上享有表决权，仅在与之利益密切相关的特定事项上享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 , jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .） | <audio controls><source src="./wavs/casestudy/L3.wav" type="audio/wav">Your browser does not support the audio element.</audio> | ![L3](./wavs/casestudy/refalign_L3.jpg) |
-| 为了观察不同长度的对齐现象，我们今天就来合成一句非常长的句子试试看。（wei4 le2 guan1 cha2 bu4 tong2 chang2 du4 de5 dui4 qi2 xian4 xiang4 , wo3 men1 jin1 tian1 jiu4 lai2 he2 cheng2 yi2 ju4 fei1 chang2 chang2 de5 ju4 zi5 shi4 shi4 kan4 .） | <audio controls><source src="./wavs/casestudy/L4.wav" type="audio/wav">Your browser does not support the audio element.</audio> | ![L4](./wavs/casestudy/refalign_L4.jpg) |
+| 你好。（ni2 hao3 .） | <audio controls><source src="./wavs/casestudy/L0.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L0.jpg" width="50%"> |
+| 仅在表决权，仅在表决权。（jin3 zai4 biao3 jue2 quan2 , jin3 zai4 biao3 jue2 quan2 .） | <audio controls><source src="./wavs/casestudy/L1.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L1.jpg" width="50%"> |
+| 仅在与之利益密切相关的特定事项上享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .） | <audio controls><source src="./wavs/casestudy/L2.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L2.jpg" width="50%"> |
+| 仅在与之利益密切相关的特定事项上享有表决权，仅在与之利益密切相关的特定事项上享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 , jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .） | <audio controls><source src="./wavs/casestudy/L3.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L3.jpg" width="50%"> |
+| 为了观察不同长度的对齐现象，我们今天就来合成一句非常长的句子试试看。（wei4 le2 guan1 cha2 bu4 tong2 chang2 du4 de5 dui4 qi2 xian4 xiang4 , wo3 men1 jin1 tian1 jiu4 lai2 he2 cheng2 yi2 ju4 fei1 chang2 chang2 de5 ju4 zi5 shi4 shi4 kan4 .） | <audio controls><source src="./wavs/casestudy/L4.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L4.jpg" width="50%"> |
 
 **Sample 2**
 Reference Audio: <audio controls><source src="./wavs/reference/SSB19350001.wav" type="audio/wav">Your browser does not support the audio element.</audio>
@@ -74,11 +74,11 @@ Content: 六十三万四千一百七十八。（liu4 shi2 san1 wan4 si4 qian1 yi
 
 | Target Chinese Text（Phoneme Sequence） | CDFSE | Reference Alignment |
 | :---- | :---- | :---- |
-| 你好。（ni2 hao3 .） | <audio controls><source src="./wavs/cdfse/L5.wav" type="audio/wav">Your browser does not support the audio element.</audio> | ![L5](./wavs/casestudy/refalign_L5.jpg) |
-| 六十三万。（liu4 shi2 san1 wan4 .） | <audio controls><source src="./wavs/casestudy/L6.wav" type="audio/wav">Your browser does not support the audio element.</audio> | ![L6](./wavs/casestudy/refalign_L6.jpg) |
-| 六十三万四千一百七十八。（liu4 shi2 san1 wan4 si4 qian1 yi1 bai3 qi1 shi2 ba1 .） | <audio controls><source src="./wavs/casestudy/L7.wav" type="audio/wav">Your browser does not support the audio element.</audio> | ![L7](./wavs/casestudy/refalign_L7.jpg) |
-| 八十七百一千四万三十六。（ba1 shi2 qi1 bai3 yi1 qian1 si4 wan4 san1 shi2 liu4 .） | <audio controls><source src="./wavs/casestudy/L8.wav" type="audio/wav">Your browser does not support the audio element.</audio> | ![L8](./wavs/casestudy/refalign_L8.jpg) |
-| 为了观察不同长度的对齐现象，我们今天就来合成一句非常长的句子试试看。（wei4 le2 guan1 cha2 bu4 tong2 chang2 du4 de5 dui4 qi2 xian4 xiang4 , wo3 men1 jin1 tian1 jiu4 lai2 he2 cheng2 yi2 ju4 fei1 chang2 chang2 de5 ju4 zi5 shi4 shi4 kan4 .） | <audio controls><source src="./wavs/casestudy/L9.wav" type="audio/wav">Your browser does not support the audio element.</audio> | ![L9](./wavs/casestudy/refalign_L9.jpg) |
+| 你好。（ni2 hao3 .） | <audio controls><source src="./wavs/cdfse/L5.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L5.jpg" width="50%"> |
+| 六十三万。（liu4 shi2 san1 wan4 .） | <audio controls><source src="./wavs/casestudy/L6.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L6.jpg" width="50%"> |
+| 六十三万四千一百七十八。（liu4 shi2 san1 wan4 si4 qian1 yi1 bai3 qi1 shi2 ba1 .） | <audio controls><source src="./wavs/casestudy/L7.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L7.jpg" width="50%"> |
+| 八十七百一千四万三十六。（ba1 shi2 qi1 bai3 yi1 qian1 si4 wan4 san1 shi2 liu4 .） | <audio controls><source src="./wavs/casestudy/L8.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L8.jpg" width="50%"> |
+| 为了观察不同长度的对齐现象，我们今天就来合成一句非常长的句子试试看。（wei4 le2 guan1 cha2 bu4 tong2 chang2 du4 de5 dui4 qi2 xian4 xiang4 , wo3 men1 jin1 tian1 jiu4 lai2 he2 cheng2 yi2 ju4 fei1 chang2 chang2 de5 ju4 zi5 shi4 shi4 kan4 .） | <audio controls><source src="./wavs/casestudy/L9.wav" type="audio/wav">Your browser does not support the audio element.</audio> |<img src="./wavs/casestudy/refalign_L9.jpg" width="50%">|
 
 
 
