@@ -80,11 +80,11 @@ Content: 六十三万四千一百七十八。（liu4 shi2 san1 wan4 si4 qian1 yi
 
 | Target Chinese Text（Phoneme Sequence） | CDFSE | Reference Alignment |
 | :---- | :---- | :---- |
-| 你好。（ni2 hao3 .） | <audio controls><source src="./wavs/cdfse/L5.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L5.jpg" width="100%"> |
-| 六十三万。（liu4 shi2 san1 wan4 .） | <audio controls><source src="./wavs/casestudy/L6.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L6.jpg" width="100%"> |
-| 六十三万四千一百七十八。（liu4 shi2 san1 wan4 si4 qian1 yi1 bai3 qi1 shi2 ba1 .） | <audio controls><source src="./wavs/casestudy/L7.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L7.jpg" width="100%"> |
-| 八十七百一千四万三十六。（ba1 shi2 qi1 bai3 yi1 qian1 si4 wan4 san1 shi2 liu4 .） | <audio controls><source src="./wavs/casestudy/L8.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L8.jpg" width="100%"> |
-| 为了观察不同长度的对齐现象，我们今天就来合成一句非常长的句子试试看。（wei4 le2 guan1 cha2 bu4 tong2 chang2 du4 de5 dui4 qi2 xian4 xiang4 , wo3 men1 jin1 tian1 jiu4 lai2 he2 cheng2 yi2 ju4 fei1 chang2 chang2 de5 ju4 zi5 shi4 shi4 kan4 .） | <audio controls><source src="./wavs/casestudy/L9.wav" type="audio/wav">Your browser does not support the audio element.</audio> |<img src="./wavs/casestudy/refalign_L9.jpg" width="100%">|
+| 你好。（ni2 hao3 .） | <audio controls><source src="./wavs/casestudy/L5.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L5.jpg" width="80%"> |
+| 六十三万。（liu4 shi2 san1 wan4 .） | <audio controls><source src="./wavs/casestudy/L6.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L6.jpg" width="80%"> |
+| 六十三万四千一百七十八。（liu4 shi2 san1 wan4 si4 qian1 yi1 bai3 qi1 shi2 ba1 .） | <audio controls><source src="./wavs/casestudy/L7.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L7.jpg" width="80%"> |
+| 八十七百一千四万三十六。（ba1 shi2 qi1 bai3 yi1 qian1 si4 wan4 san1 shi2 liu4 .） | <audio controls><source src="./wavs/casestudy/L8.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L8.jpg" width="80%"> |
+| 为了观察不同长度的对齐现象，我们今天就来合成一句非常长的句子试试看。（wei4 le2 guan1 cha2 bu4 tong2 chang2 du4 de5 dui4 qi2 xian4 xiang4 , wo3 men1 jin1 tian1 jiu4 lai2 he2 cheng2 yi2 ju4 fei1 chang2 chang2 de5 ju4 zi5 shi4 shi4 kan4 .） | <audio controls><source src="./wavs/casestudy/L9.wav" type="audio/wav">Your browser does not support the audio element.</audio> |<img src="./wavs/casestudy/refalign_L9.jpg" width="80%">|
 
 
 
