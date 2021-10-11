@@ -9,8 +9,7 @@ Zero-shot speaker adaptation aims to investigate how to better clone an unseen s
 #### (S) means seen speaker in the training set and (US) means unseen speaker. A reference audio is the only reference for zero-shot speaker adaptation TTS, thus we hope the synthesized speech is more similar to the reference audio both in global timbre and local style or habit variations. 
 | SpeakerID | Reference Audio | Chinese Text (Phoneme Sequence) | GSE | CLS | CDFSE |
 | :---- | :---- | :---- | :---- | :---- | :---- |
-| SSB | 你猜我猜你猜不猜。 | <audio controls><source src="./wavs/wrf/wav-batch_7_sentence_0-linear.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/bnm/wav-batch_7_sentence_0-linear.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
-| 2 | 家庭成员一般在除夕夜聚会吃年夜饭庆祝。 | <audio controls><source src="./wavs/wrf/wav-batch_8_sentence_0-linear.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/bnm/wav-batch_8_sentence_0-linear.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+| SSB0005 (S) | <audio controls><source src="./wavs/reference/SSB00050001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 家庭成员一般在除夕夜聚会吃年夜饭庆祝。 | <audio controls><source src="./wavs/gst/SSB00050001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cls/SSB00050001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-16/SSB00050001.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
 
 
 
