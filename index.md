@@ -65,7 +65,7 @@ We remove the explicit supervision of local speaker embedding by excluding speak
 
 ### 3. Investigation on Phoneme Classification Loss
 
-We remove the explicit supervision of local content embedding by excluding phoneme classification loss, and find it will cause the reference attention module fail.
+We remove the explicit supervision of local content embedding by excluding phoneme classification loss, and find it will cause the reference attention module fail and lose the ability to transfer personal pronunciation characteristics.
 
 | SpeakerID | Reference | Text | w PhnCls | w/o PhnCls | GT |
 | :---- | :---- | :---- | :---- | :---- | :---- |
@@ -76,7 +76,7 @@ We remove the explicit supervision of local content embedding by excluding phone
 
 ### 4. Investigation on preprocessing operations
 
-We also remove the preprocessing operations (slice, shuffle & concatenate) mentioned in the paper 2.3 during training, and find it will result in synthesized speech with strange prosody and poor intelligibility for zero-shot inference.
+We also remove the preprocessing operations (slice, shuffle & concatenate) mentioned in the paper 2.3 during training, and find it will result in synthesized speech with strange prosody and poor intelligibility.
 
 | SpeakerID | Reference | Text | w preprocessing | w/o preprocessing | GT |
 | :---- | :---- | :---- | :---- | :---- | :---- |
@@ -94,7 +94,7 @@ We also remove the preprocessing operations (slice, shuffle & concatenate) menti
 
 We have plotted some alignment samples from reference attention module of CDFSE. It can be observed that the reference attention module successfully learns the right content alignment between reference audio and text, providing the interpretability of our proposed method.
 
-#####An alignment example in CDFSE.
+##### An alignment example in CDFSE.
 
 **Reference Speech Side**: 来几首法语歌儿。（lai2 ji2 shou3 fa2 yv3 ge1 rr .）
 
@@ -110,7 +110,7 @@ We have plotted some alignment samples from reference attention module of CDFSE.
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/weight_case.jpg" width="80%">
+    src="./imgs/weight_case.jpg" width="600">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -137,7 +137,7 @@ For comparison, another case with specific-designed input text is given, present
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/refalign_attentron.jpg" width="300">
+    src="./imgs/refalign_attentron.jpg" width="500">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -152,7 +152,7 @@ For comparison, another case with specific-designed input text is given, present
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/refalign_cdfse.jpg" width="300">
+    src="./imgs/refalign_cdfse.jpg" width="500">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -169,7 +169,7 @@ We further visualize the fine-grained speaker embeddings by 2D t-SNE. As shown i
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/tsne_CDFSE.jpg" width="100%">
+    src="./imgs/tsne_CDFSE.jpg" width="600">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
