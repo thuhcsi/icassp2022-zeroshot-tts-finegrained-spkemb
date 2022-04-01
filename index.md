@@ -96,17 +96,21 @@ We have plotted some alignment samples from reference attention module of CDFSE.
 
 **An alignment example in CDFSE.**
 
-Reference Speech Side: 来几首法语歌儿。（lai2 ji2 shou3 fa2 yu3 ge1 rr .）<audio controls><source src="./wavs/Reference/SSB16300026.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+Reference Speech Side: 来几首法语歌儿。（lai2 ji2 shou3 fa2 yu3 ge1 rr .）
+
+<audio controls><source src="./wavs/Reference/SSB16300026.wav" type="audio/wav">Your browser does not support the audio element.</audio>
 
 Input Text Side: 反而进一步提升了他个人在海内外的知名度。 (fan3 er2 jin4 yi2 bu4 ti2 sheng1 le5 ta1 ge4 ren2 zai4 hai3 nei4 wai4 de5 zhi1 ming2 du4 .)
 
-Synthesized Speech: <audio controls><source src="./wavs/CDFSE_16/SSB16300026.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+Synthesized Speech: 
+
+<audio controls><source src="./wavs/CDFSE_16/SSB16300026.wav" type="audio/wav">Your browser does not support the audio element.</audio>
 
 
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/weight_case.jpg">
+    src="./imgs/weight_case.jpg" width="80%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -117,31 +121,38 @@ Synthesized Speech: <audio controls><source src="./wavs/CDFSE_16/SSB16300026.wav
 
 **Compared with Attentron\*.**
 
-*The input text is designed to first repeat the content of the reference speech and then reverse it at the Chinese character level.*
+For comparison, another case with specific-designed input text is given, presenting alignments from CDFSE and the attention mechanism in Attentron\*. 
+*The input text is designed to first repeat the content of the reference speech and then reverse it at the Chinese character level.*
 
-Reference Speech Side: 仅在与之利益密切相关的特定事项上，享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .）<audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+Reference Speech Side: 仅在与之利益密切相关的特定事项上，享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .）
+
+<audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio>
 
 Input Text Side: 仅在与之利益密切相关的特定事项上，享有表决权。权决表有享，上项事定特的关相切密益利之与在仅。 (jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 . quan2 jue2 biao3 you2 xiang2 , shang4 xiang4 shi4 ding4 te4 de5 guan1 xiang1 qie4 mi4 yi4 li4 zhi1 yu3 zai4 jin3 .)
 
-Synthesized Speech of Attentron\*: <audio controls><source src="./wavs/casestudy/Attentron.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+Synthesized Speech of Attentron\*: 
+
+<audio controls><source src="./wavs/casestudy/Attentron.wav" type="audio/wav">Your browser does not support the audio element.</audio>
 
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/refalign_attentron.jpg">
+    src="./imgs/refalign_attentron.jpg" width="70%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;"> Fig.3 (a): Alignment in Attentron\*. </div>
+    padding: 2px;"> Fig.3 (a): Alignment in Attentron*. </div>
 </center>
 
-Synthesized Speech of CDFSE: <audio controls><source src="./wavs/casestudy/CDFSE.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+Synthesized Speech of CDFSE: 
+
+<audio controls><source src="./wavs/casestudy/CDFSE.wav" type="audio/wav">Your browser does not support the audio element.</audio>
 
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/refalign_cdfse.jpg">
+    src="./imgs/refalign_cdfse.jpg" width="70%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -158,7 +169,7 @@ We further visualize the fine-grained speaker embeddings by 2D t-SNE. As shown i
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/tsne_CDFSE.jpg">
+    src="./imgs/tsne_CDFSE.jpg" width="100%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
