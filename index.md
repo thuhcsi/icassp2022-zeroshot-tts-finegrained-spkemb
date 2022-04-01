@@ -1,12 +1,28 @@
 ---
 layout: default
 ---
+
 # Abstract
 
 Zero-shot speaker adaptation aims to clone an unseen speaker's voice without any adaptation time and parameters. Previous researches usually use a speaker encoder to extract a global fixed speaker embedding from reference speech, and several attempts have tried variable-length speaker embedding. However, they neglect to transfer the personal pronunciation characteristics related to phoneme content, leading to poor speaker similarity in terms of detailed speaking styles and pronunciation habits. To improve the ability of the speaker encoder to model personal pronunciation characteristics, we propose content-dependent fine-grained speaker embedding for zero-shot speaker adaptation. The corresponding local content embeddings and speaker embeddings are extracted from a reference speech, respectively. Instead of modeling the temporal relations, a reference attention module is introduced to model the content relevance between the reference speech and the input text, and to generate the fine-grained speaker embedding for each phoneme encoder output. The experimental results show that our proposed method can improve speaker similarity of synthesized speeches, especially for unseen speakers.
 
+<img src="./imgs/cdfse_modelframework.jpg" width="100%">
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./imgs/cdfse_modelframework.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"> The structure of the proposed model. </div>
+</center>
+
+
+
 # Subjective Evaluation  
-To demonstrate that our proposed **CDFSE** method outperforms all three baselines in terms of speaker similarity. **GSE** denotes global speaker embedding method, **CLS** denotes jointly-trained speaker classifier method, and **Attentron\*** denotes attention-based variable-length embedding method, which are described in detail in the paper. In SpeakerID, **(S)** means **seen speaker** in the training set and **(US)** means **unseen speaker**.  A reference speech is provided for the only reference in this zero-shot task, thus we hope the synthesized speech is more similar to **the reference speech both in global timbre and local pronunciation variations**. 
+
+To demonstrate that our proposed **CDFSE** method outperforms all three baselines in terms of speaker similarity. **GSE** denotes global speaker embedding method, **CLS** denotes jointly-trained speaker classifier method, and **Attentron\*** denotes attention-based variable-length embedding method, which are described in detail in the paper. In SpeakerID, **(S)** means **seen speaker** in the training set and **(US)** means **unseen speaker**.  A reference speech is provided for the only reference in this zero-shot task, thus we hope the synthesized speech is more similar to **the reference speech both in global timbre and local pronunciation variations (e.g., accent)**. 
 *In addition, ground-truth (GT) samples are also provided for better comparison.*
 
 | SpeakerID | Reference | Text | GSE | CLS | Attentron* | CDFSE | GT |
@@ -25,35 +41,67 @@ To demonstrate that our proposed **CDFSE** method outperforms all three baseline
 
 
 # Ablation Study 
-### Investigation on speaker embeddings with different granularity 
-To investigate the impact of local speaker embeddings with different granularity, we adjust the kernel size of average pooling layer in the downsample encoder. The number after CDFSE- represents the **overall downsampling times** in the temporal resolution compared with the reference mel-spectrogram. It can be observed that, with smaller downsampling times, more fine-grained local speaker embeddings can be extracted from reference audio, which can improve speaker similarity but result in deterioration of intelligibility.
 
-| SpeakerID | Reference | Text | CDFSE-1 | CDFSE-4 | CDFSE-16 | CDFSE-64 |
-| :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| SSB0112 | <audio controls><source src="./wavs/reference/SSB01120001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 一三三三七零八零七八七。 | <audio controls><source src="./wavs/cdfse-1/SSB01120002.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-4/SSB01120002.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-16/SSB01120002.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-64/SSB01120002.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
-| SSB0393 | <audio controls><source src="./wavs/reference/SSB03930001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 如新兴区域的望京奥运村地区。 | <audio controls><source src="./wavs/cdfse-1/SSB03930005.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-4/SSB03930005.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-16/SSB03930005.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-64/SSB03930005.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
-| SSB0710 | <audio controls><source src="./wavs/reference/SSB07100001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 甜心特工国语版。 | <audio controls><source src="./wavs/cdfse-1/SSB07100001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-4/SSB07100001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-16/SSB07100001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-64/SSB07100001.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
-| SSB1020 | <audio controls><source src="./wavs/reference/SSB10200001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 将依据发行人的信息披露文件进行独立的投资判断。 | <audio controls><source src="./wavs/cdfse-1/SSB10200009.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-4/SSB10200009.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-16/SSB10200009.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-64/SSB10200009.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
-| SSB1630 | <audio controls><source src="./wavs/reference/SSB16300375.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 广州的电影有什么。 | <audio controls><source src="./wavs/cdfse-1/SSB16300008.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-4/SSB16300008.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-16/SSB16300008.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-64/SSB16300008.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+### 1. Investigation on local speaker embeddings with different granularity 
+
+To investigate the impact of local speaker embeddings with different granularity, we adjust the kernel size of average pooling layer in the downsample encoder. The number after 'CDFSE-' represents the **overall downsampling times in temporal** compared with the reference mel-spectrogram. Our proposed method is **CDFSE-16**. With the decrease of downsampling times, the mispronunciation rate of synthesized speech increases significantly.
+
+| SpeakerID | Reference | Text | CDFSE-1 | CDFSE-4 | CDFSE-16 | CDFSE-64 | GT |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| SSB0393 | <audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 看来我现在是个真正的作家了。  (kan4 lai2 wo3 xian4 zai4 shi4 ge4 zhen1 zheng4 de5 zuo4 jia1 le5 .) | <audio controls><source src="./wavs/CDFSE_01/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_04/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_16/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_64/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/GT/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+| SSB0606 | <audio controls><source src="./wavs/Reference/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 要完整呈现家人的实时健康状态。  (yao4 wan2 zheng2 cheng2 xian4 jia1 ren2 de5 shi2 shi2 jian4 kang1 zhuang4 tai4 .) | <audio controls><source src="./wavs/CDFSE_01/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_04/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_16/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_64/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/GT/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
 
 
-### Investigation on preprocessing operations
-We have tried to remove the preprocessing operations (slice, shuffle & concatenate) mentioned in the paper 2.3 during training, and find it will result in synthesized speech with strange prosody and poor intelligibility for zero-shot inference.
 
-| Reference Audio | Target Chinese Text | w preprocessing | w/o preprocessing |
-| :---- | :---- | :---- | :---- |
-| <audio controls><source src="./wavs/reference/SSB03930001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 看来我现在是个真正的作家了。 | <audio controls><source src="./wavs/cdfse-16/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-woshuffle/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
-| <audio controls><source src="./wavs/reference/SSB06060001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 智能硬件需要软件平台交互数据。 | <audio controls><source src="./wavs/cdfse-16/SSB06060003.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-woshuffle/SSB06060003.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
-| <audio controls><source src="./wavs/reference/SSB10200001.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 私募债券的投资风险由投资者自行承担。 | <audio controls><source src="./wavs/cdfse-16/SSB10200104.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/cdfse-woshuffle/SSB10200104.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+### 2. Investigation on Speaker Classification Loss
+
+We remove the explicit supervision of local speaker embedding by excluding speaker classification loss, and find it will cause the decline of speaker similarity and synthesis stability.
+
+| SpeakerID | Reference | Text | w SpkCls | w/o SpkCls | GT |
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| SSB0393 | <audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 看来我现在是个真正的作家了。  (kan4 lai2 wo3 xian4 zai4 shi4 ge4 zhen1 zheng4 de5 zuo4 jia1 le5 .) | <audio controls><source src="./wavs/CDFSE_16/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_16_wospk/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/GT/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+| SSB0606 | <audio controls><source src="./wavs/Reference/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> |  要完整呈现家人的实时健康状态。  (yao4 wan2 zheng2 cheng2 xian4 jia1 ren2 de5 shi2 shi2 jian4 kang1 zhuang4 tai4 .)  | <audio controls><source src="./wavs/CDFSE_16/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_16_wospk/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/GT/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+
+
+
+### 3. Investigation on Phoneme Classification Loss
+<img src="./wavs/CDFSE_16_wospk/refalign_SSB03930007.jpg" width="80%"> 
+We remove the explicit supervision of local content embedding by excluding phoneme classification loss, and find it will cause the reference attention module fail.
+
+| SpeakerID | Reference | Text | w PhnCls | w/o PhnCls | GT |
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| SSB0393 | <audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 看来我现在是个真正的作家了。  (kan4 lai2 wo3 xian4 zai4 shi4 ge4 zhen1 zheng4 de5 zuo4 jia1 le5 .) | <audio controls><source src="./wavs/CDFSE_16/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB03930007.jpg" width="80%"> | <audio controls><source src="./wavs/CDFSE_16_wocon/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_wocon/refalign_SSB03930007.jpg" width="80%"> | <audio controls><source src="./wavs/GT/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+| SSB0606 | <audio controls><source src="./wavs/Reference/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 要完整呈现家人的实时健康状态。  (yao4 wan2 zheng2 cheng2 xian4 jia1 ren2 de5 shi2 shi2 jian4 kang1 zhuang4 tai4 .)  | <audio controls><source src="./wavs/CDFSE_16/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB03930007.jpg" width="80%"> | <audio controls><source src="./wavs/CDFSE_16_wocon/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_wocon/refalign_SSB06060006.jpg" width="80%"> | <audio controls><source src="./wavs/GT/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+
+
+
+### 4. Investigation on preprocessing operations
+
+We also remove the preprocessing operations (slice, shuffle & concatenate) mentioned in the paper 2.3 during training, and find it will result in synthesized speech with strange prosody and poor intelligibility for zero-shot inference.
+
+| SpeakerID | Reference | Text | w preprocessing | w/o preprocessing | GT |
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| SSB0393 | <audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 看来我现在是个真正的作家了。  (kan4 lai2 wo3 xian4 zai4 shi4 ge4 zhen1 zheng4 de5 zuo4 jia1 le5 .) | <audio controls><source src="./wavs/CDFSE_16/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB03930007.jpg" width="80%"> | <audio controls><source src="./wavs/CDFSE_16_woshuffle/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_woshuffle/refalign_SSB03930007.jpg" width="80%"> | <audio controls><source src="./wavs/GT/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+| SSB0606 | <audio controls><source src="./wavs/Reference/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 要完整呈现家人的实时健康状态。  (yao4 wan2 zheng2 cheng2 xian4 jia1 ren2 de5 shi2 shi2 jian4 kang1 zhuang4 tai4 .)  | <audio controls><source src="./wavs/CDFSE_16/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB03930007.jpg" width="80%"> | <audio controls><source src="./wavs/CDFSE_16_woshuffle/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_woshuffle/refalign_SSB06060006.jpg" width="80%"> | <audio controls><source src="./wavs/GT/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+
 
 
 * * *
 
 
 # Case Study
-We have plotted some alignment samples from reference attention module. It can be observed that the reference attention module successfully learns the right content alignment between reference audio and text, providing the interpretability of our proposed method.
+
+We have plotted some alignment samples from reference attention module of CDFSE. It can be observed that the reference attention module successfully learns the right content alignment between reference audio and text, providing the interpretability of our proposed method.
 
 **Sample 1**
+
+Reference Speech: <audio controls><source src="./wavs/Reference/SSB16300026.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+
+Content: 仅在与之利益密切相关的特定事项上享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .）
+
+
+
+
 
 Reference Audio: <audio controls><source src="./wavs/reference/SSB03930001.wav" type="audio/wav">Your browser does not support the audio element.</audio>
 
