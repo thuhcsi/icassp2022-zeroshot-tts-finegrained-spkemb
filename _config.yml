@@ -1,6 +1,6 @@
 remote_theme: thuhcsi/slate
-title: ZERO-SHOT SPEAKER ADAPTATION TEXT-TO-SPEECH WITH CONTENT-DEPENDENT FINE-GRAINED SPEAKER EMBEDDING
-description: submitted to ICASSP 2022.
+title: Content-Dependent Fine-Grained Speaker Embedding for Zero-Shot Speaker Adaptation in Text-to-Speech Synthesis
+description: submitted to Interspeech 2022.
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-cayman
