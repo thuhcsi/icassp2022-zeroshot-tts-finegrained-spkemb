@@ -1,2 +1,3 @@
-# ZERO-SHOT SPEAKER ADAPTATION TEXT-TO-SPEECH WITH CONTENT-DEPENDENT FINE-GRAINED SPEAKER EMBEDDING
-Please visit https://thuhcsi.github.io/icassp2022-zeroshot-tts-finegrained-spkemb
+# Content-Dependent Fine-Grained Speaker Embedding for Zero-Shot Speaker
+Adaptation in Text-to-Speech Synthesis
+Please visit https://thuhcsi.github.io/interspeech2022-cdfse-tts
