@@ -14,7 +14,7 @@ Zero-shot speaker adaptation aims to clone an unseen speaker's voice without any
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;"> The structure of the proposed model. </div>
+    padding: 2px;"> Fig.1: The structure of the proposed model. </div>
 </center>
 
 
@@ -88,49 +88,80 @@ We also remove the preprocessing operations (slice, shuffle & concatenate) menti
 * * *
 
 
-# Case Study
+# Analysis and Discussion
+
+### Alignment about content relevance
 
 We have plotted some alignment samples from reference attention module of CDFSE. It can be observed that the reference attention module successfully learns the right content alignment between reference audio and text, providing the interpretability of our proposed method.
 
-**Sample 1**
+**An alignment example in CDFSE.**
 
-Reference Speech: <audio controls><source src="./wavs/Reference/SSB16300026.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+Reference Speech Side: 来几首法语歌儿。（lai2 ji2 shou3 fa2 yu3 ge1 rr .）<audio controls><source src="./wavs/Reference/SSB16300026.wav" type="audio/wav">Your browser does not support the audio element.</audio>
 
-Content: 仅在与之利益密切相关的特定事项上享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .）
+Input Text Side: 反而进一步提升了他个人在海内外的知名度。 (fan3 er2 jin4 yi2 bu4 ti2 sheng1 le5 ta1 ge4 ren2 zai4 hai3 nei4 wai4 de5 zhi1 ming2 du4 .)
 
-
-
-
-
-Reference Audio: <audio controls><source src="./wavs/reference/SSB03930001.wav" type="audio/wav">Your browser does not support the audio element.</audio>
-
-Content: 仅在与之利益密切相关的特定事项上享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .）
+Synthesized Speech: <audio controls><source src="./wavs/CDFSE_16/SSB16300026.wav" type="audio/wav">Your browser does not support the audio element.</audio>
 
 
-| Target Chinese Text（Phoneme Sequence） | CDFSE | Reference Alignment |
-| :---- | :---- | :---- |
-| 你好。（ni2 hao3 .） | <audio controls><source src="./wavs/casestudy/L0.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L0.jpg" width="100%"> |
-| 仅在表决权，仅在表决权。（jin3 zai4 biao3 jue2 quan2 , jin3 zai4 biao3 jue2 quan2 .） | <audio controls><source src="./wavs/casestudy/L1.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L1.jpg" width="100%"> |
-| 仅在与之利益密切相关的特定事项上享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .） | <audio controls><source src="./wavs/casestudy/L2.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L2.jpg" width="100%"> |
-| 仅在与之利益密切相关的特定事项上享有表决权，仅在与之利益密切相关的特定事项上享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 , jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .） | <audio controls><source src="./wavs/casestudy/L3.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L3.jpg" width="100%"> |
-| 为了观察不同长度的对齐现象，我们今天就来合成一句非常长的句子试试看。（wei4 le2 guan1 cha2 bu4 tong2 chang2 du4 de5 dui4 qi2 xian4 xiang4 , wo3 men1 jin1 tian1 jiu4 lai2 he2 cheng2 yi2 ju4 fei1 chang2 chang2 de5 ju4 zi5 shi4 shi4 kan4 .） | <audio controls><source src="./wavs/casestudy/L4.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L4.jpg" width="100%"> |
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./imgs/weight_case.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"> Fig.2: An alignment example in CDFSE. </div>
+</center>
 
 
-**Sample 2**
+**Compared with Attentron\*.**
 
-Reference Audio: <audio controls><source src="./wavs/reference/SSB19350001.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+*The input text is designed to first repeat the content of the reference speech and then reverse it at the Chinese character level.*
 
-Content: 六十三万四千一百七十八。（liu4 shi2 san1 wan4 si4 qian1 yi1 bai3 qi1 shi2 ba1 .）
+Reference Speech Side: 仅在与之利益密切相关的特定事项上，享有表决权。（jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 .）<audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio>
 
-| Target Chinese Text（Phoneme Sequence） | CDFSE | Reference Alignment |
-| :---- | :---- | :---- |
-| 你好。（ni2 hao3 .） | <audio controls><source src="./wavs/casestudy/L5.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L5.jpg" width="100%"> |
-| 六十三万。（liu4 shi2 san1 wan4 .） | <audio controls><source src="./wavs/casestudy/L6.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L6.jpg" width="100%"> |
-| 六十三万四千一百七十八。（liu4 shi2 san1 wan4 si4 qian1 yi1 bai3 qi1 shi2 ba1 .） | <audio controls><source src="./wavs/casestudy/L7.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L7.jpg" width="100%"> |
-| 八十七百一千四万三十六。（ba1 shi2 qi1 bai3 yi1 qian1 si4 wan4 san1 shi2 liu4 .） | <audio controls><source src="./wavs/casestudy/L8.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <img src="./wavs/casestudy/refalign_L8.jpg" width="100%"> |
-| 为了观察不同长度的对齐现象，我们今天就来合成一句非常长的句子试试看。（wei4 le2 guan1 cha2 bu4 tong2 chang2 du4 de5 dui4 qi2 xian4 xiang4 , wo3 men1 jin1 tian1 jiu4 lai2 he2 cheng2 yi2 ju4 fei1 chang2 chang2 de5 ju4 zi5 shi4 shi4 kan4 .） | <audio controls><source src="./wavs/casestudy/L9.wav" type="audio/wav">Your browser does not support the audio element.</audio> |<img src="./wavs/casestudy/refalign_L9.jpg" width="100%">|
+Input Text Side: 仅在与之利益密切相关的特定事项上，享有表决权。权决表有享，上项事定特的关相切密益利之与在仅。 (jin3 zai4 yu3 zhi1 li4 yi4 mi4 qie4 xiang1 guan1 de5 te4 ding4 shi4 xiang4 shang4 , xiang2 you2 biao3 jue2 quan2 . quan2 jue2 biao3 you2 xiang2 , shang4 xiang4 shi4 ding4 te4 de5 guan1 xiang1 qie4 mi4 yi4 li4 zhi1 yu3 zai4 jin3 .)
+
+Synthesized Speech of Attentron\*: <audio controls><source src="./wavs/casestudy/Attentron.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./imgs/refalign_attentron.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"> Fig.3 (a): Alignment in Attentron\*. </div>
+</center>
+
+Synthesized Speech of CDFSE: <audio controls><source src="./wavs/casestudy/CDFSE.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./imgs/refalign_cdfse.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"> Fig.3 (b): Alignment in CDFSE. </div>
+</center>
 
 
 
+### Visualization of speaker embeddings
 
+We further visualize the fine-grained speaker embeddings by 2D t-SNE. As shown in Fig.4, the fine-grained speaker embeddings of the same speaker tend to group together while exhibiting certain content dependent diversities.
 
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./imgs/tsne_CDFSE.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"> Fig.4: T-SNE visualization of content-dependent fine-grained speaker embeddings. </div>
+</center>
