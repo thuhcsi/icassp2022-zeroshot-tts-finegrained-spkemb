@@ -65,7 +65,7 @@ We remove the explicit supervision of local speaker embedding by excluding speak
 
 ### 3. Investigation on Phoneme Classification Loss
 
-We remove the explicit supervision of local content embedding by excluding phoneme classification loss, and find it will cause the reference attention module fail and lose the ability to transfer personal pronunciation characteristics.
+We remove the explicit supervision of local content embedding by excluding phoneme classification loss, and find it will cause the reference attention module fail and lose the ability to transfer personal pronunciation characteristics. *It can be seen that the alignment from the reference attention module cannot find content relevance between reference speech and input text.*
 
 | SpeakerID | Reference | Text | w PhnCls | w/o PhnCls | GT |
 | :---- | :---- | :---- | :---- | :---- | :---- |
@@ -76,7 +76,7 @@ We remove the explicit supervision of local content embedding by excluding phone
 
 ### 4. Investigation on preprocessing operations
 
-We also remove the preprocessing operations (slice, shuffle & concatenate) mentioned in the paper 2.3 during training, and find it will result in synthesized speech with strange prosody and poor intelligibility.
+We also remove the preprocessing operations (slice, shuffle & concatenate) mentioned in the paper 2.3 during training, and find it will result in synthesized speech with strange prosody and poor intelligibility.  *It can be seen that the alignment from the reference attention module tend to model the temporal relation between reference speech and input text.(
 
 | SpeakerID | Reference | Text | w preprocessing | w/o preprocessing | GT |
 | :---- | :---- | :---- | :---- | :---- | :---- |
