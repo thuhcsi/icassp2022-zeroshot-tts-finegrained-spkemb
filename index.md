@@ -21,7 +21,7 @@ Zero-shot speaker adaptation aims to clone an unseen speaker's voice without any
 
 # Subjective Evaluation  
 
-To demonstrate that our proposed **CDFSE** method outperforms all three baselines in terms of speaker similarity. **GSE** denotes global speaker embedding method, **CLS** denotes jointly-trained speaker classifier method, and **Attentron\*** denotes attention-based variable-length embedding method, which are described in detail in the paper. In SpeakerID, **(S)** means **seen speaker** in the training set and **(US)** means **unseen speaker**.  A reference speech is provided for the only reference in this zero-shot task, thus we hope the synthesized speech is more similar to **the reference speech both in global timbre and local pronunciation variations (e.g., accent)**. 
+To demonstrate that our proposed **CDFSE** method outperforms all three baselines in terms of speaker similarity, we provide some synthesized samples for listening. **GSE** denotes global speaker embedding method, **CLS** denotes jointly-trained speaker classifier method, and **Attentron\*** denotes attention-based variable-length embedding method, which are described in detail in the paper. In SpeakerID, **(S)** means **seen speaker** in the training set and **(US)** means **unseen speaker**.  A reference speech is provided for the only reference in this zero-shot task, thus we hope the synthesized speech is more similar to **the reference speech both in global timbre and local pronunciation variations (e.g., accent)**. 
 *In addition, ground-truth (GT) samples are also provided for better comparison.*
 
 | SpeakerID | Reference | Text | GSE | CLS | Attentron* | CDFSE | GT |
@@ -80,8 +80,8 @@ We also remove the preprocessing operations (slice, shuffle & concatenate) menti
 
 | SpeakerID | Reference | Text | w preprocessing | w/o preprocessing | GT |
 | :---- | :---- | :---- | :---- | :---- | :---- |
-| SSB0393 | <audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 看来我现在是个真正的作家了。  (kan4 lai2 wo3 xian4 zai4 shi4 ge4 zhen1 zheng4 de5 zuo4 jia1 le5 .)<img width=200/> | <audio controls><source src="./wavs/CDFSE_16/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB03930007.jpg" width="100%"> | <audio controls><source src="./wavs/CDFSE_16_woshuffle/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_woshuffle/refalign_SSB03930007.jpg" width="100%"> | <audio controls><source src="./wavs/GT/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
-| SSB0606 | <audio controls><source src="./wavs/Reference/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 要完整呈现家人的实时健康状态。  (yao4 wan2 zheng2 cheng2 xian4 jia1 ren2 de5 shi2 shi2 jian4 kang1 zhuang4 tai4 .)  | <audio controls><source src="./wavs/CDFSE_16/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB06060006.jpg" width="100%"> | <audio controls><source src="./wavs/CDFSE_16_woshuffle/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_woshuffle/refalign_SSB06060006.jpg" width="100%"> | <audio controls><source src="./wavs/GT/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+| SSB0393 (US) | <audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 看来我现在是个真正的作家了。  (kan4 lai2 wo3 xian4 zai4 shi4 ge4 zhen1 zheng4 de5 zuo4 jia1 le5 .)<img width=200/> | <audio controls><source src="./wavs/CDFSE_16/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB03930007.jpg" width="100%"> | <audio controls><source src="./wavs/CDFSE_16_woshuffle/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_woshuffle/refalign_SSB03930007.jpg" width="100%"> | <audio controls><source src="./wavs/GT/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+| SSB0606 (US) | <audio controls><source src="./wavs/Reference/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 要完整呈现家人的实时健康状态。  (yao4 wan2 zheng2 cheng2 xian4 jia1 ren2 de5 shi2 shi2 jian4 kang1 zhuang4 tai4 .)  | <audio controls><source src="./wavs/CDFSE_16/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB06060006.jpg" width="100%"> | <audio controls><source src="./wavs/CDFSE_16_woshuffle/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_woshuffle/refalign_SSB06060006.jpg" width="100%"> | <audio controls><source src="./wavs/GT/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
 
 
 
@@ -110,7 +110,7 @@ We have plotted some alignment samples from reference attention module of CDFSE.
 <center>
   <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/weight_case.jpg" width="400">
+    src="./imgs/weight_case_origin.jpg" width="400">
    <br>  
   <div>The original alignment.</div>
   <br>
