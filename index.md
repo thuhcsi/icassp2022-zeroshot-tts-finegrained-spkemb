@@ -76,7 +76,7 @@ We remove the explicit supervision of local content embedding by excluding phone
 
 ### 4. Investigation on preprocessing operations
 
-We also remove the preprocessing operations (slice, shuffle & concatenate) mentioned in the paper 2.3 during training, and find it will result in synthesized speech with strange prosody and poor intelligibility.  *It can be seen that the alignment from the reference attention module tend to model the temporal relation between reference speech and input text.(
+We also remove the preprocessing operations (slice, shuffle & concatenate) mentioned in the paper 2.3 during training, and find it will result in synthesized speech with strange prosody and poor intelligibility.  *It can be seen that the alignment from the reference attention module tend to model the temporal relation between reference speech and input text.*
 
 | SpeakerID | Reference | Text | w preprocessing | w/o preprocessing | GT |
 | :---- | :---- | :---- | :---- | :---- | :---- |
