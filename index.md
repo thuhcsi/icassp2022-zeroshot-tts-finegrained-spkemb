@@ -48,7 +48,7 @@ To investigate the impact of local speaker embeddings with different granularity
 
 | SpeakerID | Reference | Text | CDFSE-1 | CDFSE-4 | CDFSE-16 | CDFSE-64 | GT |
 | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| SSB0393 (US) | <audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 看来我现在是个真正的作家了。  (kan4 lai2 wo3 xian4 zai4 shi4 ge4 zhen1 zheng4 de5 zuo4 jia1 le5 .) <img width=200/> | <audio controls><source src="./wavs/CDFSE_01/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_04/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_16/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_64/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/GT/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+| SSB0393 (US) | <audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 看来我现在是个真正的作家了。  (kan4 lai2 wo3 xian4 zai4 shi4 ge4 zhen1 zheng4 de5 zuo4 jia1 le5 .) | <audio controls><source src="./wavs/CDFSE_01/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_04/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_16/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_64/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/GT/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
 | SSB0606 (US) | <audio controls><source src="./wavs/Reference/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 要完整呈现家人的实时健康状态。  (yao4 wan2 zheng2 cheng2 xian4 jia1 ren2 de5 shi2 shi2 jian4 kang1 zhuang4 tai4 .) | <audio controls><source src="./wavs/CDFSE_01/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_04/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_16/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_64/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/GT/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
 
 
@@ -59,7 +59,7 @@ We remove the explicit supervision of local speaker embedding by excluding speak
 
 | SpeakerID | Reference | Text | w SpkCls | w/o SpkCls | GT |
 | :---- | :---- | :---- | :---- | :---- | :---- |
-| SSB0393 (US) | <audio controls><source src="./wavs/Reference/SSB03930010.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 并和同学旁边的乘客换了座位。  (bing4 he2 tong2 xue2 pang2 bian1 de5 cheng2 ke4 huan4 le5 zuo4 wei3 .)<img width=200/> | <audio controls><source src="./wavs/CDFSE_16/SSB03930010.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_16_wospk/SSB03930010.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/GT/SSB03930010.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+| SSB0393 (US) | <audio controls><source src="./wavs/Reference/SSB03930010.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 并和同学旁边的乘客换了座位。  (bing4 he2 tong2 xue2 pang2 bian1 de5 cheng2 ke4 huan4 le5 zuo4 wei3 .) | <audio controls><source src="./wavs/CDFSE_16/SSB03930010.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_16_wospk/SSB03930010.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/GT/SSB03930010.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
 | SSB1935 (US) | <audio controls><source src="./wavs/Reference/SSB19350006.wav" type="audio/wav">Your browser does not support the audio element.</audio> |  是为拉高股价所做的奋力一搏。  (shi4 wei4 la1 gao1 gu3 jia4 suo3 zuo4 de5 fen4 li4 yi4 bo2 .)  | <audio controls><source src="./wavs/CDFSE_16/SSB19350006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/CDFSE_16_wospk/SSB19350006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | <audio controls><source src="./wavs/GT/SSB19350006.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
 
 
@@ -70,7 +70,7 @@ We remove the explicit supervision of local content embedding by excluding phone
 
 | SpeakerID | Reference | Text | w PhnCls | w/o PhnCls | GT |
 | :---- | :---- | :---- | :---- | :---- | :---- |
-| SSB0606 (US) | <audio controls><source src="./wavs/Reference/SSB06060009.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 相关公司股票走势中航地产保利地产金融街。  (xiang1 guan1 gong1 si1 gu3 piao4 zou3 shi4 zhong1 hang2 di4 chan3 bao3 li4 di4 chan3 jin1 rong2 jie1 .) <img width=200/>| <audio controls><source src="./wavs/CDFSE_16/SSB06060009.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB06060009.jpg" width="100%"> | <audio controls><source src="./wavs/CDFSE_16_wocon/SSB06060009.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_wocon/refalign_SSB06060009.jpg" width="100%"> | <audio controls><source src="./wavs/GT/SSB06060009.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+| SSB0606 (US) | <audio controls><source src="./wavs/Reference/SSB06060009.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 相关公司股票走势中航地产保利地产金融街。  (xiang1 guan1 gong1 si1 gu3 piao4 zou3 shi4 zhong1 hang2 di4 chan3 bao3 li4 di4 chan3 jin1 rong2 jie1 .) | <audio controls><source src="./wavs/CDFSE_16/SSB06060009.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB06060009.jpg" width="100%"> | <audio controls><source src="./wavs/CDFSE_16_wocon/SSB06060009.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_wocon/refalign_SSB06060009.jpg" width="100%"> | <audio controls><source src="./wavs/GT/SSB06060009.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
 | SSB1020 (US) | <audio controls><source src="./wavs/Reference/SSB10200004.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 无论是在喜临门地标还是左右。  (wu2 lun4 shi4 zai4 xi3 lin2 men2 di4 biao1 hai2 shi4 zuo3 you4 .)  | <audio controls><source src="./wavs/CDFSE_16/SSB10200004.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB10200004.jpg" width="100%"> | <audio controls><source src="./wavs/CDFSE_16_wocon/SSB10200004.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_wocon/refalign_SSB10200004.jpg" width="100%"> | <audio controls><source src="./wavs/GT/SSB10200004.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
 
 
@@ -81,7 +81,7 @@ We also remove the preprocessing operations (slice, shuffle & concatenate) menti
 
 | SpeakerID | Reference | Text | w preprocessing | w/o preprocessing | GT |
 | :---- | :---- | :---- | :---- | :---- | :---- |
-| SSB0393 (US) | <audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 看来我现在是个真正的作家了。  (kan4 lai2 wo3 xian4 zai4 shi4 ge4 zhen1 zheng4 de5 zuo4 jia1 le5 .)<img width=200/> | <audio controls><source src="./wavs/CDFSE_16/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB03930007.jpg" width="100%"> | <audio controls><source src="./wavs/CDFSE_16_woshuffle/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_woshuffle/refalign_SSB03930007.jpg" width="100%"> | <audio controls><source src="./wavs/GT/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
+| SSB0393 (US) | <audio controls><source src="./wavs/Reference/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 看来我现在是个真正的作家了。  (kan4 lai2 wo3 xian4 zai4 shi4 ge4 zhen1 zheng4 de5 zuo4 jia1 le5 .) | <audio controls><source src="./wavs/CDFSE_16/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB03930007.jpg" width="100%"> | <audio controls><source src="./wavs/CDFSE_16_woshuffle/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_woshuffle/refalign_SSB03930007.jpg" width="100%"> | <audio controls><source src="./wavs/GT/SSB03930007.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
 | SSB0606 (US) | <audio controls><source src="./wavs/Reference/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> | 要完整呈现家人的实时健康状态。  (yao4 wan2 zheng2 cheng2 xian4 jia1 ren2 de5 shi2 shi2 jian4 kang1 zhuang4 tai4 .)  | <audio controls><source src="./wavs/CDFSE_16/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16/refalign_SSB06060006.jpg" width="100%"> | <audio controls><source src="./wavs/CDFSE_16_woshuffle/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> <img src="./wavs/CDFSE_16_woshuffle/refalign_SSB06060006.jpg" width="100%"> | <audio controls><source src="./wavs/GT/SSB06060006.wav" type="audio/wav">Your browser does not support the audio element.</audio> |
 
 
@@ -111,13 +111,13 @@ We have plotted some alignment samples from reference attention module of CDFSE.
 <center>
   <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/weight_case_origin.jpg" width="400">
+    src="./imgs/weight_case_origin.jpg" width="60%">
    <br>  
   <div>The original alignment.</div>
   <br>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/weight_case.jpg" width="700">
+    src="./imgs/weight_case.jpg" width="100%">
     <br>
     <div>The repaint alignment.</div>
    <br>
@@ -146,7 +146,7 @@ For comparison, another case with specific-designed input text is given, present
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/refalign_attentron.jpg" width="500">
+    src="./imgs/refalign_attentron.jpg" width="100%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -161,7 +161,7 @@ For comparison, another case with specific-designed input text is given, present
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/refalign_cdfse.jpg" width="500">
+    src="./imgs/refalign_cdfse.jpg" width="100%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -178,7 +178,7 @@ We further visualize the fine-grained speaker embeddings by 2D t-SNE. As shown i
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/tsne_CDFSE.jpg" width="600">
+    src="./imgs/tsne_CDFSE.jpg" width="100%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
