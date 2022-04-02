@@ -2,6 +2,8 @@
 layout: default
 ---
 
+*Yixuan Zhou, Changhe Song, Xiang Li, Luwen Zhang, Zhiyong Wu, Yanyao Bian, Dan Su, Helen Meng*
+
 
 # Abstract
 
@@ -10,7 +12,7 @@ Zero-shot speaker adaptation aims to clone an unseen speaker's voice without any
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/cdfse_modelframework.jpg">
+    src="./imgs/cdfse_modelframework.jpg"  width="100%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -91,7 +93,7 @@ We also remove the preprocessing operations (slice, shuffle & concatenate) menti
 
 # Analysis and Discussion
 
-### Alignment about content relevance
+### 1. Alignment about content relevance
 
 We have plotted some alignment samples from reference attention module of CDFSE. It can be observed that the reference attention module successfully learns the right content alignment between reference audio and text, providing the interpretability of our proposed method.
 
@@ -146,7 +148,7 @@ For comparison, another case with specific-designed input text is given, present
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/refalign_attentron.jpg" width="100%">
+    src="./imgs/refalign_attentron.jpg" width="70%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -161,7 +163,7 @@ For comparison, another case with specific-designed input text is given, present
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./imgs/refalign_cdfse.jpg" width="100%">
+    src="./imgs/refalign_cdfse.jpg" width="70%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -171,7 +173,7 @@ For comparison, another case with specific-designed input text is given, present
 
 
 
-### Visualization of speaker embeddings
+### 2. Visualization of speaker embeddings
 
 We further visualize the fine-grained speaker embeddings by 2D t-SNE. As shown in Fig.4, the fine-grained speaker embeddings of the same speaker tend to group together while exhibiting certain content dependent diversities.
 
