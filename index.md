@@ -1,7 +1,3 @@
----
-layout: default
----
-
 *Yixuan Zhou, Changhe Song, Xiang Li, Luwen Zhang, Zhiyong Wu, Yanyao Bian, Dan Su, Helen Meng*
 
 
